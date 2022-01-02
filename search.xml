@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>spark配置(测试)</title>
+      <link href="/2022/01/02/spark-pei-zhi-ce-shi/"/>
+      <url>/2022/01/02/spark-pei-zhi-ce-shi/</url>
+      
+        <content type="html"><![CDATA[<p style="text-align: center;">Saprk伪分布配置</p><p style="text-align: left;">环境</p><p style="text-align: left;">spark-3.1.2-bin-hadoop2.7</p><p style="text-align: left;">scala-2.13.6</p><p style="text-align: left;">pycharm-community-2021.2.1.tar.gz</p><p style="text-align: left;">python3</p><p>&nbsp;</p><p><strong>步骤：</strong></p><p>1、解压spark Scala，pycharm 安装包</p><p>tar -zxvf pycharm-community-2021.2.1.tar.gz</p><p>tar -zxvf<strong> s</strong>park</p><p>tar -zxvf scala</p><p>2、修改profile文件</p><p>&nbsp;Vim /etc/profile</p><p>JAVA_HOME=/hadoop/software/jdk1.8.0_231/bin<br>HADOOP_HOME=/hadoop/software/hadoop-2.7.1<br>SCALA_HOME=/hadoop/software/scala-2.13.6<br>SPARK_HOME=/hadoop/software/spark-3.1.2-bin-hadoop2.7/sbin<br>export HBASE_HOME=/hadoop/software/hbase-1.4.13<br>export PATH=$JAVA_HOME:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH:$HBASE_HOME:$PATH<br>export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin:$PATH:$SCALA_HOME/bin:$PATH<br>export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.9-src.zip:$PYTHONPATH<br>export PYSPARK_PYTHON=python3</p><p>3、修改spark配置文件</p><p>&nbsp;(1):复制并重命名文件</p><p>&nbsp; &nbsp;cp spark-env.sh.template spark-env.sh</p><p>&nbsp; &nbsp;cp log4j.properties.template log4j.properties</p><p>&nbsp;(2):修改spark-env.sh</p><p>export JAVA_HOME=/hadoop/software/jdk1.8.0_231 <br>export SCALA_HOME=/hadoop/software/scala-2.13.6<br>export HADOOP_HOME=/hadoop/software/hadoop-2.7.1<br>export SPARK_MASTER_IP=192.168.58.129 <br>export SPARK_WORKER_MEMORY=1024m <br>export SPARK_WORKER_CORES=2 <br>export SPARK_WORKER_INSTANCES=1</p><p>启动在spark/sbin</p><p>start-all.sh&nbsp; 开启</p><p>stop-all.sh&nbsp; &nbsp;关闭</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> text </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/01/01/hello-world/"/>
       <url>/2022/01/01/hello-world/</url>
